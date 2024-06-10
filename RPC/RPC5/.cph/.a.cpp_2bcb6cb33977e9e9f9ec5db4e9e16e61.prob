@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\RPC\\RPC6\\a.cpp","tests":[{"id":1716054340014,"input":"15\n5\n7 2 5 11 3","output":"3 5"},{"id":1716059482771,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\RPC\\RPC6\\a.cpp","group":"local","local":true}

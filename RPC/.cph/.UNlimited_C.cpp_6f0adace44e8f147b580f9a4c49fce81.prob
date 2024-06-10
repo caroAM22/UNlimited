@@ -1,0 +1,1 @@
+{"name":"Local: UNlimited_C","url":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\RPC\\UNlimited_C.cpp","tests":[{"id":1708206962141,"input":"13\nA 2 3 4 5\n6 7 8 9 T\nJ Q K","output":"71"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\RPC\\UNlimited_C.cpp","group":"local","local":true}

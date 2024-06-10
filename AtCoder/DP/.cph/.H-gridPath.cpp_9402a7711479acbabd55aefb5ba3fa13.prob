@@ -1,0 +1,1 @@
+{"name":"Local: H-gridPath","url":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\AtCoder\\DP\\H-gridPath.cpp","tests":[{"id":1716750407005,"input":"4 4\n....\n.#..\n...#\n#...","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\AtCoder\\DP\\H-gridPath.cpp","group":"local","local":true}

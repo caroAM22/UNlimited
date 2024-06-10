@@ -1,0 +1,1 @@
+{"name":"Local: diamond","url":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\Entrenamiento\\diamond.cpp","tests":[{"id":1713916432638,"input":"5 3\n1\n6\n4\n3\n1","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\Entrenamiento\\diamond.cpp","group":"local","local":true}

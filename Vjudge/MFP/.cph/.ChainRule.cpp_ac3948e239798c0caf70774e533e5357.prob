@@ -1,0 +1,1 @@
+{"name":"Local: ChainRule","url":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\Vjudge\\MFP\\ChainRule.cpp","tests":[{"id":1717605317434,"input":"5 5\n0 1 5\n1 2 4\n0 3 8\n2 3 2\n4 2 3","output":"13"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\Vjudge\\MFP\\ChainRule.cpp","group":"local","local":true}

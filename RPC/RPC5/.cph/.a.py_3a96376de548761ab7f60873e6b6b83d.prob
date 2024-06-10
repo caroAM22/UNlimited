@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\RPC\\RPC6\\a.py","tests":[{"id":1716057372181,"input":"10\n((())(()))","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\2206c\\OneDrive\\Documentos\\UNlimited\\RPC\\RPC6\\a.py","group":"local","local":true}
