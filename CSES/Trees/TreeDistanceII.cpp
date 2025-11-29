@@ -1,62 +1,66 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-const int MAXN = 100005; // Ajusta el tamaño según sea necesario
-vector<int> tree[MAXN];
-int maxLength1[MAXN], maxLength2[MAXN], maxLength[MAXN];
+const int MAXN = 200000;
+vector<int> adj[MAXN + 1];
 
-// Primera DFS para calcular maxLength1 y maxLength2
-void dfs1(int node, int parent) {
-    int max1 = 0, max2 = 0;
-    for (int child : tree[node]) {
-        if (child == parent) continue;
-        dfs1(child, node);
-        int length = maxLength1[child];
-        if (length > max1) {
-            max2 = max1;
-            max1 = length;
-        } else if (length > max2) {
-            max2 = length;
-        }
+long long sub[MAXN + 1];      // tamaño del subárbol
+long long ans[MAXN + 1];      // respuesta final: suma de distancias
+int n;
+
+// Primer DFS: calcula sub[u] y ans[1] = suma de distancias desde 1
+void dfs1(int u, int parent) {
+    sub[u] = 1;  // cada nodo cuenta como 1
+    ans[u] = 0;  // aquí ans[u] se usa para acumular distancias parciales
+
+    for (int v : adj[u]) {
+        if (v == parent) continue;
+        dfs1(v, u);
+
+        sub[u] += sub[v];
+        ans[u] += ans[v] + sub[v];  
+        // ans[v] = suma distancias dentro del subárbol de v
+        // sub[v] = número de nodos del subárbol, todos a dist+1
     }
-    maxLength1[node] = max1 + 1;
-    maxLength2[node] = max2 + 1;
 }
 
-// Segunda DFS para calcular maxLength con caminos hacia el padre
-void dfs2(int node, int parent) {
-    for (int child : tree[node]) {
-        if (child == parent) continue;
-        if (maxLength1[child] + 1 == maxLength1[node]) {
-            maxLength[child] = max(maxLength2[node] + 1, maxLength1[parent] + 1);
-        } else {
-            maxLength[child] = max(maxLength1[node], maxLength1[parent] + 1);
-        }
-        dfs2(child, node);
+// Segundo DFS: re-rooting DP para calcular ans[v] desde ans[u]
+void dfs2(int u, int parent) {
+    for (int v : adj[u]) {
+        if (v == parent) continue;
+
+        // Fórmula de re-rooting:
+        // al mover la raíz de u a v:
+        // ans[v] = ans[u] - sub[v] + (n - sub[v])
+        ans[v] = ans[u] - sub[v] + (n - sub[v]);
+
+        dfs2(v, u);
     }
 }
 
 int main() {
-    int n; 
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     cin >> n;
-
-    for (int i = 1; i < n; ++i) {
-        int u, v;
-        cin >> u >> v;
-        tree[u].push_back(v);
-        tree[v].push_back(u);
+    for (int i = 0; i < n - 1; i++) {
+        int a, b;
+        cin >> a >> b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
 
-    dfs1(1, -1);
-    maxLength[1] = maxLength1[1];
-    dfs2(1, -1);
+    // Primer DFS: raíz = 1
+    dfs1(1, 0);
 
-    for (int i = 1; i <= n; ++i) {
-        cout << "maxLength(" << i << ") = " << maxLength[i] << endl;
+    // Segundo DFS: propagamos la respuesta
+    dfs2(1, 0);
+
+    // Imprimir resultados
+    for (int i = 1; i <= n; i++) {
+        cout << ans[i] << " ";
     }
+    cout << "\n";
 
     return 0;
 }

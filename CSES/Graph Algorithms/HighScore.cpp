@@ -4,12 +4,11 @@ typedef long long ll;
 typedef vector<ll> vl;
 typedef tuple<int, int, ll> edge;
 const ll INF = 1e18;
-#define print(arr) for(auto& x:arr)cout<<x<<" ";cout<<"\n"
-
+ 
 vector<edge> edges;   
 vl dist;        
 int n, m;
-
+ 
 bool bellmanFord(int x) {
     dist[x] = 0;
     for (int i = 1; i <= n - 1; i++) {
@@ -22,11 +21,11 @@ bool bellmanFord(int x) {
             }
         }
     }
-
+ 
     // Verificar la presencia de ciclos positivos
     vector<bool> reachable(n, false), reachable_from_last(n, false);
     reachable[0] = true;
-
+ 
     // Encontrar nodos alcanzables desde el inicio
     for (int i = 0; i < n; i++) {
         for (auto e : edges) {
@@ -36,7 +35,7 @@ bool bellmanFord(int x) {
             if (reachable[a]) reachable[b] = true;
         }
     }
-
+ 
     // Encontrar nodos que pueden alcanzar el nodo final
     reachable_from_last[n-1] = true;
     for (int i = 0; i < n; i++) {
@@ -47,7 +46,7 @@ bool bellmanFord(int x) {
             if (reachable_from_last[b]) reachable_from_last[a] = true;
         }
     }
-
+ 
     // Verificar ciclos positivos que afecten el camino al nodo final
     for (int i = 0; i < n; i++) {
         for (auto e : edges) {
@@ -63,7 +62,7 @@ bool bellmanFord(int x) {
     }
     return false;
 }
-
+ 
 int main() {
     cin >> n >> m;
     dist.assign(n, -INF); 
@@ -79,6 +78,5 @@ int main() {
     } else {
         cout << dist[n-1] << endl;
     }
-    print(dist);
     return 0;
 }

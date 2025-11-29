@@ -14,11 +14,11 @@ typedef pair<int, int> ii;
 typedef vector<ii> vii;
 const int MOD = 1e9+7;
 const ll INF = 1e18;
-
+ 
 vector<vl> adj;  
 vector<vl> dist;   
 int n, m;   
-
+ 
 void floydWarshall(){
     forx(k,n) {
         forx(i,n) {
@@ -29,7 +29,7 @@ void floydWarshall(){
     }
     return;
 }
-
+ 
 int main(){
     ios::sync_with_stdio(false);cin.tie(nullptr); 
     int q, a, b; cin >> n >> m >> q;

@@ -13,10 +13,10 @@ typedef vector<int> vi;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 const int MOD = 1e9+7;
-
+ 
 vi subtrees;
 vector<vi> children;
-
+ 
 void dfs(int x){
     subtrees[x]=1;
     for(auto child: children[x]){
@@ -24,7 +24,7 @@ void dfs(int x){
         subtrees[x]+=subtrees[child];
     }
 }
-
+ 
 int main(){
     int n, b; cin >> n;
     children.assign(n, vi());

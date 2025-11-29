@@ -1,25 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define all(x) x.begin(), x.end()
-#define forx(i,n) for(int i=0; i<(int)n; ++i)
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-int main(){
-    int n, a, b; cin >> n;
-    forx(i,n){
+    int t;
+    cin >> t;
+
+    while (t--) {
+        long long a, b;
         cin >> a >> b;
-        if(a==b && a%3==0) cout << "YES";
-        else if(abs(b-a)==1){
-            if(a<b){
-                a-=1; b-=2;
-            }else{
-                b-=1; a-=2;
-            }
 
-            if(a==b && a%3==0) cout <<"YES";
-            else cout << "NO";
-        }else cout << "NO";
-        cout << "\n";
+        // Condición 1: la suma total debe ser múltiplo de 3
+        if ((a + b) % 3 != 0) {
+            cout << "NO\n";
+            continue;
+        }
+
+        // Condición 2: ninguna pila puede ser más del doble de la otra
+        long long mn = min(a, b);
+        long long mx = max(a, b);
+
+        if (mn * 2 < mx) {
+            cout << "NO\n";
+        } else {
+            cout << "YES\n";
+        }
     }
+
     return 0;
 }

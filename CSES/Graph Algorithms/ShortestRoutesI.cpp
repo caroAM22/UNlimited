@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define PB push_back
 #define S second
 #define F first
@@ -10,11 +10,11 @@ typedef vector<pll> vll;
 typedef pair<int, int> ii;
 typedef vector<ll> vl;
 const ll INF = 1e18;
-
+ 
 vector<vector<pair<int, int>>> adj;   
 vl dist;        
 int n, m, s;
-
+ 
 void dijkstra(int s){
 	priority_queue<pll, vll, greater<pll>> pq;
 	pq.push({0, s});
@@ -32,7 +32,7 @@ void dijkstra(int s){
 		}
 	}
 }
-
+ 
 int main(){
     int a, b, c;
     cin >> n >> m;

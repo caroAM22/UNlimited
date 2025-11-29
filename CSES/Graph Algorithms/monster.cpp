@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define PB push_back
 #define F first
 #define S second 
@@ -13,7 +13,7 @@ vector<vector<char>> path;
 const int dirx [4] = {1,0,-1,0};
 const int diry [4] = {0,-1,0,1};
 int n, m;
-
+ 
 void floodFillMonster(int x1, int y1){
     queue<pair<int, int>> q;
     q.push({x1,y1});
@@ -49,7 +49,7 @@ void floodFillMonster(int x1, int y1){
         }
     }
 }
-
+ 
 bool floodFill(int x1, int y1){
     queue<pair<int, int>> q;
     q.push({x1,y1});
@@ -90,7 +90,7 @@ bool floodFill(int x1, int y1){
     }
     return true;
 }
-
+ 
 int main(){
     ios::sync_with_stdio(false);cin.tie(nullptr); 
     cin >> n >> m;
@@ -105,7 +105,7 @@ int main(){
         mapa.PB(c);
     }
     vector<vector<bool>> v(n, vector<bool>(m,false));
-
+ 
     for(int i=0; i<n; ++i){ 
         for(int j=0; j<m; ++j){
             if(mapa[i][j]=='M' && distancias[i][j]==-1){

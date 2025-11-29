@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define PB push_back
 #define S second
 #define F first
@@ -9,7 +9,7 @@ const int diry [4] = {1,0,-1,0};
 vector<vector<bool>> visited;
 vector<vector<char>> mapa;
 int n, m; 
-
+ 
 void floodfill(int x1, int y1){
     queue<pair<int, int>> q;
     q.push({x1,y1});
@@ -29,7 +29,7 @@ void floodfill(int x1, int y1){
         }
     }
 }
-
+ 
 int main(){
     ios::sync_with_stdio(false);cin.tie(nullptr); 
     cin >> n >> m;

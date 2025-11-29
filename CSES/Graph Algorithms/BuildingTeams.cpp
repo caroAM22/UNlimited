@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define PB push_back
-
+ 
 vector<vector<int>> adj;
 vector<bool> visited;
 vector<int> teams;
 int n, m, t;
-
+ 
 string bfs(int x){
     queue<int> q;
     visited[x]=true;
@@ -27,7 +27,7 @@ string bfs(int x){
     }
     return "";
 }
-
+ 
 int main(){
     cin >> n >> m;
     int a, b;

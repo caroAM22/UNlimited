@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 #define print(arr) for(auto& x:arr)cout<<x<<" ";
 #define PB push_back
 #define F first
@@ -12,7 +12,7 @@ typedef pair<ll, int> pli;
 typedef vector<pli> vli;
 typedef vector<vector<ii>> vii;
 const ll INF=1e18;
-
+ 
 vl dijkstra(int s, int n, vii &adj){
     priority_queue<pli, vli, greater<pli>> pq;
     vl dist(n,INF);
@@ -33,7 +33,7 @@ vl dijkstra(int s, int n, vii &adj){
 	}
     return dist;
 }
-
+ 
 int main(){
     int n, m, a, b, w; cin >> n >> m;
     vii adj0(n);
